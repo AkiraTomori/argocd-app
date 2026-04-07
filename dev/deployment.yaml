@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-myapp
+  name: "{{ .Release.Name }}-myapp"
 spec:
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: myapp
-  replicas: {{ .Values.replicaCount }}  
   template:
     metadata:
       labels:
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}" # <--- Dùng biến
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
         - containerPort: {{ .Values.service.targetPort }}
