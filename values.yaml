@@ -1,0 +1,9 @@
+replicaCount: 3
+
+image:
+  repository: AkiraTomori/argocd-app
+  tag: "1.2"
+
+service:
+  port: 8080
+  targetPort: 8080
