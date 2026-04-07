@@ -1,7 +1,7 @@
 replicaCount: 3
 
 image:
-  repository: AkiraTomori/argocd-app
+  repository: ntquan87/argocd-app
   tag: "1.2"
 
 service:
